@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/francois/Dev/CppND-Capstone-Snake-Game/build"
+			"value" : "/home/francois/Dev/CppND-Capstone-Shooter/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -595,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/francois/Dev/CppND-Capstone-Snake-Game"
+			"value" : "/home/francois/Dev/CppND-Capstone-Shooter"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/francois/Dev/CppND-Capstone-Snake-Game/build"
+			"value" : "/home/francois/Dev/CppND-Capstone-Shooter/build"
 		},
 		{
 			"name" : "SDL2Test_SOURCE_DIR",
@@ -1155,7 +1155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/francois/Dev/CppND-Capstone-Snake-Game"
+			"value" : "/home/francois/Dev/CppND-Capstone-Shooter"
 		},
 		{
 			"name" : "SDL2_DIR",

@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include <input.hpp>
+#include <event.hpp>
 #include <vector>
 
 class EventDispatcher
@@ -8,14 +8,14 @@ class EventDispatcher
 public:
   void Dispatch() const;
 
-  void RegisterKeyDownCallback(std::function<void(Key)> callback);
+  void RegisterKeyEventCallback(std::function<void(KeyEvent)> callback);
 
   void RegisterQuitCallback(std::function<void()> callback);
 
 private:
 
-  void DispatchKeyDown(Key key) const;
+  void DispatchKeyEvent(KeyEvent) const;
 
-  std::vector<std::function<void(Key)>> key_down_callbacks_;
+  std::vector<std::function<void(KeyEvent)>> key_event_callbacks_;
   std::function<void()> quit_callback_{nullptr};
 };

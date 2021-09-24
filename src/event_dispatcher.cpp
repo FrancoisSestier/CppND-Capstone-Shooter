@@ -9,6 +9,7 @@ void EventDispatcher::Dispatch() const
   SDL_Event e;
   while (SDL_PollEvent(&e))
   {
+    
     if (e.type == SDL_QUIT)
     {
       if (quit_callback_)
@@ -16,59 +17,58 @@ void EventDispatcher::Dispatch() const
         quit_callback_();
       }
     }
-    else if (e.type == SDL_KEYDOWN)
+    else if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
     {
+      KeyState key_state = (e.type == SDL_KEYDOWN ? KeyState::pressed : KeyState::released);
+
       switch (e.key.keysym.sym)
       {
       case SDLK_UP:
-        DispatchKeyDown(Key::Up);
+        DispatchKeyEvent(KeyEvent{Key::Up,key_state});
         break;
-
       case SDLK_DOWN:
-        DispatchKeyDown(Key::Down);
+        DispatchKeyEvent(KeyEvent{Key::Down,key_state});
         break;
-
       case SDLK_LEFT:
-        DispatchKeyDown(Key::Left);
+        DispatchKeyEvent(KeyEvent{Key::Left,key_state});
         break;
-
       case SDLK_RIGHT:
-        DispatchKeyDown(Key::Right);
+        DispatchKeyEvent(KeyEvent{Key::Right,key_state});
         break;
       case SDLK_w:
-        DispatchKeyDown(Key::Up);
+        DispatchKeyEvent(KeyEvent{Key::Up,key_state});
         break;
       case SDLK_a:
-        DispatchKeyDown(Key::Left);
+        DispatchKeyEvent(KeyEvent{Key::Left,key_state});
         break;
       case SDLK_s:
-        DispatchKeyDown(Key::Down);
+        DispatchKeyEvent(KeyEvent{Key::Down,key_state});
         break;
       case SDLK_d:
-        DispatchKeyDown(Key::Right);
+        DispatchKeyEvent(KeyEvent{Key::Right,key_state});
         break;
       case SDLK_e:
-        DispatchKeyDown(Key::Right);
+        DispatchKeyEvent(KeyEvent{Key::Shoot,key_state});
         break;
       case SDLK_LSHIFT:
-        DispatchKeyDown(Key::Shift);
+        DispatchKeyEvent(KeyEvent{Key::Dash,key_state});
         break;
       }
     }
   }
 }
 
-void EventDispatcher::DispatchKeyDown(Key key) const
+void EventDispatcher::DispatchKeyEvent(KeyEvent e) const
 {
-  for (auto &callbacks : key_down_callbacks_)
+  for (auto &callbacks : key_event_callbacks_)
   {
-    callbacks(key);
+    callbacks(e);
   }
 }
 
-void EventDispatcher::RegisterKeyDownCallback(std::function<void(Key)> callback)
+void EventDispatcher::RegisterKeyEventCallback(std::function<void(KeyEvent)> callback)
 {
-  key_down_callbacks_.push_back(callback);
+  key_event_callbacks_.push_back(callback);
 }
 
 void EventDispatcher::RegisterQuitCallback(std::function<void()> callback)

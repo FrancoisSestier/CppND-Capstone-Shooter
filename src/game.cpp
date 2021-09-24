@@ -7,7 +7,7 @@
 Game::Game() {
   renderer_ = Renderer::GetInstance();
   event_dispatcher_.RegisterQuitCallback([this](){running_ = false;});
-  event_dispatcher_.RegisterKeyDownCallback([this](Key key){player_.OnKeyDown(key);});
+  event_dispatcher_.RegisterKeyEventCallback([this](KeyEvent e){player_.OnKey(e);});
 }
 
 void Game::Run() {
@@ -24,7 +24,8 @@ void Game::Run() {
     Update();
 
     renderer_->BeginRender();
-
+    renderer_->Render(player_);
+    player_.IncreaseFrameCount();
     renderer_->EndRender();  
 
     // If the time for this frame is too small (i.e. frame_duration is
@@ -40,4 +41,5 @@ void Game::Run() {
 
 void Game::Update() {
   event_dispatcher_.Dispatch();
+  player_.Update();
 }

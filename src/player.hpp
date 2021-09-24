@@ -1,16 +1,20 @@
 #pragma once
 #include <vector>
-#include "SDL.h"
+#include <SDL.h>
 #include <input.hpp>
 #include <unordered_map>
 #include <spritesheet.hpp>
+#include <event.hpp>
+#include <vec2.hpp>
 
-enum class PlayerDirection{
+enum class Dir
+{
     Right,
     Left
 };
 
-enum class PlayerState {
+enum class PlayerState
+{
     Moving,
     Idle,
     Charging,
@@ -21,28 +25,35 @@ enum class PlayerState {
     Waking
 };
 
+class Player
+{
+public:
+    Player();
 
+    void Update();
 
-class Player {
- public:
+    PlayerState GetState() const;
+    void SetState(PlayerState state);
+    void IncreaseFrameCount();
+    void OnKey(KeyEvent e);
+    void SetDir(Dir dir);
+    void SetDir(Key key);
+    void Move();
+    uint32_t GetStateFramecount() const;
+    const Spritesheet& GetSpritesheet() const;
+    vec2 GetPos() const;
+    Dir GetDir() const;
 
-  Player() = default;
+private:
+    void LoadResource();
 
-  void Update();
-
-  PlayerState GetState() const { return state_ ;}
-
-  void OnKeyDown(Key key);
-
- private:
-  void LoadResource();
-
-  PlayerDirection direction_{PlayerDirection::Right};
-  PlayerState state_{PlayerState::Idle};
-
-  SDL_Point pos_;
-  float speed_{0.1f};
-  bool alive_{true};
-  std::unordered_map<PlayerState,Spritesheet> spritesheet_map_;
-  uint32_t state_framecount{0};
+    PlayerState state_{PlayerState::Idle};
+    vec2 pos_{50,200};
+    Dir dir_{Dir::Right};
+    float speed_{.3f};
+    float charge_{0.0f};
+    bool alive_{true};
+    bool still_charging{false};
+    std::unordered_map<PlayerState, Spritesheet> spritesheet_map_;
+    uint32_t state_framecount{0};
 };

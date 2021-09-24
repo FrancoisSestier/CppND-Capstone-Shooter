@@ -64,6 +64,16 @@ Renderer* Renderer::GetInstance()
 
 void Renderer::Render(const Player &player)
 {
+  SDL_Rect srcrect = player.GetSpritesheet().GetRect();
+  SDL_Rect dstrect = srcrect;
+  dstrect.x = player.GetPos().x;
+  dstrect.y = player.GetPos().y;
+  dstrect.w *= 4.5;
+  dstrect.h *= 4.5;
+
+  SDL_RendererFlip flip= (player.GetDir() == Dir::Right)? SDL_FLIP_NONE : SDL_FLIP_HORIZONTAL;
+
+  SDL_RenderCopyEx(sdl_renderer,player.GetSpritesheet().GetSDLTexture(),&srcrect,&dstrect,0,NULL,flip);
 }
 
 void Renderer::UpdateWindowTitle(int score, int fps)

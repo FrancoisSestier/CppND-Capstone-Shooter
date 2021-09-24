@@ -12,91 +12,143 @@ inline const std::string player_Idle_spritesheet{player_texture_folder + "/stati
 inline const std::string player_death_spritesheet{player_texture_folder + "/death.png"};
 inline const std::string player_wake_spritesheet{player_texture_folder + "/wake.png"};
 
-void Player::Update()
+Player::Player()
 {
+    LoadResource();
 }
 
-void Player::OnKeyDown(Key key)
+void Player::Update()
 {
     switch (state_)
     {
     case PlayerState::Moving:
-        switch (key)
+        Move();
+        break;
+    case PlayerState::Waking:
+        Move();
+        break;
+    default:
+        break;
+    }
+}
+
+PlayerState Player::GetState() const
+{
+    return state_;
+}
+
+void Player::SetState(PlayerState state)
+{
+    state_ = state;
+    spritesheet_map_.at(state_).Reset();
+    state_framecount = 0;
+}
+
+void Player::IncreaseFrameCount() 
+{
+    spritesheet_map_.at(state_).Tick();
+}
+
+
+void Player::OnKey(KeyEvent e)
+{
+
+    switch (state_)
+    {
+    case PlayerState::Moving:
+        if (e.key_state == KeyState::pressed && (e.key == Key::Left || e.key == Key::Right))
         {
-        case Key::Left:
-        case Key::Right:
-            //Move(Dir(key))
-            break;
-        default:
-            state_ = PlayerState::Idle;
-            break;
+            SetDir(e.key);
+        }
+        else if (e.key_state == KeyState::released && ((e.key == Key::Left && dir_ == Dir::Left) || (e.key == Key::Right && dir_ == Dir::Right)))
+        {
+            SetState(PlayerState::Idle);
+        }
+        break;
+    case PlayerState::Idle:
+        if (e.key_state == KeyState::pressed && (e.key == Key::Left || e.key == Key::Right))
+        {
+            SetState(PlayerState::Waking);
+            SetDir(e.key);
         }
         break;
     case PlayerState::Waking:
-        switch (key)
+        if (GetSpritesheet().AnimationEnded())
         {
-        case Key::Left:
-        case Key::Right:
-            if (state_framecount > spritesheet_map_[PlayerState::Waking].GetFrameCount())
+            if (e.key_state == KeyState::pressed && (e.key == Key::Left || e.key == Key::Right))
             {
-                state_ = PlayerState::Moving;
-                //Move
+                SetState(PlayerState::Moving);
+                SetDir(e.key);
             }
-            break;
-        default:
-            state_ = PlayerState::Idle;
-            break;
+        }
+        else if (e.key_state == KeyState::released && ((e.key == Key::Left && dir_ == Dir::Left) || (e.key == Key::Right && dir_ == Dir::Right)))
+        {
+            SetState(PlayerState::Idle);
         }
         break;
-
     default:
         break;
     }
+}
+
+void Player::SetDir(Key key)
+{
     switch (key)
     {
     case Key::Left:
-    case Key::Right:
-        switch (state_)
-        {
-        case PlayerState::Moving:
-            //Move(Dir(key))
-            break;
-        case PlayerState::Idle:
-            state_ = PlayerState::Waking;
-            break;
-        case PlayerState::Waking:
-            if (state_framecount > spritesheet_map_[PlayerState::Waking].GetFrameCount())
-            {
-                state_ = PlayerState::Moving;
-                //Move
-            }
-            break;
-        default:
-            break;
-        }
+        SetDir(Dir::Left);
         break;
-    case Key::Shoot:
-        switch (state_)
-        {
-        case break;
-
-            default:
-            break;
-        }
-
+    case Key::Right:
+        SetDir(Dir::Right);
+        break;
     default:
         break;
     }
+}
+
+void Player::SetDir(Dir dir)
+{
+    dir_ = dir;
+}
+
+void Player::Move()
+{
+    int dir_mod = 1;
+    if (dir_ == Dir::Left)
+    {
+        dir_mod = -1;
+    }
+    pos_.x += dir_mod * speed_;
+}
+
+uint32_t Player::GetStateFramecount() const
+{
+    return state_framecount;
 }
 
 void Player::LoadResource()
 {
 
-    spritesheet_map_.emplace(PlayerState::Moving, Spritesheet{std::make_shared<Texture>(player_move_spritesheet), 8});
-    spritesheet_map_.emplace(PlayerState::Idle, Spritesheet{std::make_shared<Texture>(player_Idle_spritesheet), 1});
-    spritesheet_map_.emplace(PlayerState::Dashing, Spritesheet{std::make_shared<Texture>(player_dash_spritesheet), 1});
-    spritesheet_map_.emplace(PlayerState::Dying, Spritesheet{std::make_shared<Texture>(player_death_spritesheet), 6});
-    spritesheet_map_.emplace(PlayerState::Shooting, Spritesheet{std::make_shared<Texture>(player_shoot_spritesheet), 6});
-    spritesheet_map_.emplace(PlayerState::Charging, Spritesheet{std::make_shared<Texture>(player_charge_spritesheet), 6});
-    spritesheet_map_.emplace(PlayerState::Waking, Spritesheet{std::make_shared<Texture>(player_charge_spritesheet), 6});
+    spritesheet_map_.try_emplace(PlayerState::Moving, Spritesheet{std::make_shared<Texture>(player_move_spritesheet), 3, 8, 8});
+    spritesheet_map_.try_emplace(PlayerState::Idle, Spritesheet{std::make_shared<Texture>(player_Idle_spritesheet), 3, 1, 1});
+    spritesheet_map_.try_emplace(PlayerState::Dashing, Spritesheet{std::make_shared<Texture>(player_dash_spritesheet), 1});
+    spritesheet_map_.try_emplace(PlayerState::Dying, Spritesheet{std::make_shared<Texture>(player_death_spritesheet), 6});
+    spritesheet_map_.try_emplace(PlayerState::Shooting, Spritesheet{std::make_shared<Texture>(player_shoot_spritesheet), 6});
+    spritesheet_map_.try_emplace(PlayerState::Charging, Spritesheet{std::make_shared<Texture>(player_charge_spritesheet), 4});
+    spritesheet_map_.try_emplace(PlayerState::Waking, Spritesheet{std::make_shared<Texture>(player_wake_spritesheet), 3, 5, 5});
+}
+
+const Spritesheet &Player::GetSpritesheet() const
+{
+    return spritesheet_map_.at(state_);
+}
+
+vec2 Player::GetPos() const
+{
+    return pos_;
+}
+
+Dir Player::GetDir() const
+{
+    return dir_;
 }

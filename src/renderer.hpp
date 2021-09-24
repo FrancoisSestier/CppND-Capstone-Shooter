@@ -8,7 +8,7 @@ class Renderer
 {
 
 public:
-  void Render(const Player &snake);
+  void Render(const Player &player);
   void BeginRender();
   void EndRender();
   void UpdateWindowTitle(int score, int fps);

@@ -5,5 +5,7 @@ enum class Key{
     Up,
     Right,
     Left,
-    Space
+    Space,
+    Dash,
+    Shoot
 };

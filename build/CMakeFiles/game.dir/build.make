@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/francois/Dev/CppND-Capstone-Snake-Game
+CMAKE_SOURCE_DIR = /home/francois/Dev/CppND-Capstone-Shooter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/francois/Dev/CppND-Capstone-Snake-Game/build
+CMAKE_BINARY_DIR = /home/francois/Dev/CppND-Capstone-Shooter/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/game.dir/depend.make
@@ -59,94 +59,94 @@ include CMakeFiles/game.dir/flags.make
 
 CMakeFiles/game.dir/src/main.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/main.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/main.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/main.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/main.cpp
 
 CMakeFiles/game.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/main.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/main.cpp > CMakeFiles/game.dir/src/main.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/main.cpp > CMakeFiles/game.dir/src/main.cpp.i
 
 CMakeFiles/game.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/main.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/main.cpp -o CMakeFiles/game.dir/src/main.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/main.cpp -o CMakeFiles/game.dir/src/main.cpp.s
 
 CMakeFiles/game.dir/src/event_dispatcher.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/event_dispatcher.cpp.o: ../src/event_dispatcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/event_dispatcher.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/event_dispatcher.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/event_dispatcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/event_dispatcher.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/event_dispatcher.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/event_dispatcher.cpp
 
 CMakeFiles/game.dir/src/event_dispatcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/event_dispatcher.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/event_dispatcher.cpp > CMakeFiles/game.dir/src/event_dispatcher.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/event_dispatcher.cpp > CMakeFiles/game.dir/src/event_dispatcher.cpp.i
 
 CMakeFiles/game.dir/src/event_dispatcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/event_dispatcher.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/event_dispatcher.cpp -o CMakeFiles/game.dir/src/event_dispatcher.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/event_dispatcher.cpp -o CMakeFiles/game.dir/src/event_dispatcher.cpp.s
 
 CMakeFiles/game.dir/src/player.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/player.cpp.o: ../src/player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/player.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/player.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/player.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/player.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/player.cpp
 
 CMakeFiles/game.dir/src/player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/player.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/player.cpp > CMakeFiles/game.dir/src/player.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/player.cpp > CMakeFiles/game.dir/src/player.cpp.i
 
 CMakeFiles/game.dir/src/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/player.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/player.cpp -o CMakeFiles/game.dir/src/player.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/player.cpp -o CMakeFiles/game.dir/src/player.cpp.s
 
 CMakeFiles/game.dir/src/game.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/game.cpp.o: ../src/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/game.cpp
 
 CMakeFiles/game.dir/src/game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/game.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
 
 CMakeFiles/game.dir/src/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/game.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
 
 CMakeFiles/game.dir/src/renderer.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/renderer.cpp.o: ../src/renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.dir/src/renderer.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/renderer.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/game.dir/src/renderer.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/renderer.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/renderer.cpp
 
 CMakeFiles/game.dir/src/renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/renderer.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/renderer.cpp > CMakeFiles/game.dir/src/renderer.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/renderer.cpp > CMakeFiles/game.dir/src/renderer.cpp.i
 
 CMakeFiles/game.dir/src/renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/renderer.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/renderer.cpp -o CMakeFiles/game.dir/src/renderer.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/renderer.cpp -o CMakeFiles/game.dir/src/renderer.cpp.s
 
 CMakeFiles/game.dir/src/texture.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/texture.cpp.o: ../src/texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.dir/src/texture.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/texture.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/game.dir/src/texture.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/texture.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/texture.cpp
 
 CMakeFiles/game.dir/src/texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/texture.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/texture.cpp > CMakeFiles/game.dir/src/texture.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/texture.cpp > CMakeFiles/game.dir/src/texture.cpp.i
 
 CMakeFiles/game.dir/src/texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/texture.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/texture.cpp -o CMakeFiles/game.dir/src/texture.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/texture.cpp -o CMakeFiles/game.dir/src/texture.cpp.s
 
 CMakeFiles/game.dir/src/spritesheet.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/spritesheet.cpp.o: ../src/spritesheet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.dir/src/spritesheet.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/spritesheet.cpp.o -c /home/francois/Dev/CppND-Capstone-Snake-Game/src/spritesheet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/game.dir/src/spritesheet.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/spritesheet.cpp.o -c /home/francois/Dev/CppND-Capstone-Shooter/src/spritesheet.cpp
 
 CMakeFiles/game.dir/src/spritesheet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/spritesheet.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Snake-Game/src/spritesheet.cpp > CMakeFiles/game.dir/src/spritesheet.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/francois/Dev/CppND-Capstone-Shooter/src/spritesheet.cpp > CMakeFiles/game.dir/src/spritesheet.cpp.i
 
 CMakeFiles/game.dir/src/spritesheet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/spritesheet.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Snake-Game/src/spritesheet.cpp -o CMakeFiles/game.dir/src/spritesheet.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/francois/Dev/CppND-Capstone-Shooter/src/spritesheet.cpp -o CMakeFiles/game.dir/src/spritesheet.cpp.s
 
 # Object files for target game
 game_OBJECTS = \
@@ -170,7 +170,7 @@ game: CMakeFiles/game.dir/src/texture.cpp.o
 game: CMakeFiles/game.dir/src/spritesheet.cpp.o
 game: CMakeFiles/game.dir/build.make
 game: CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -183,6 +183,6 @@ CMakeFiles/game.dir/clean:
 .PHONY : CMakeFiles/game.dir/clean
 
 CMakeFiles/game.dir/depend:
-	cd /home/francois/Dev/CppND-Capstone-Snake-Game/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francois/Dev/CppND-Capstone-Snake-Game /home/francois/Dev/CppND-Capstone-Snake-Game /home/francois/Dev/CppND-Capstone-Snake-Game/build /home/francois/Dev/CppND-Capstone-Snake-Game/build /home/francois/Dev/CppND-Capstone-Snake-Game/build/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/francois/Dev/CppND-Capstone-Shooter/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/francois/Dev/CppND-Capstone-Shooter /home/francois/Dev/CppND-Capstone-Shooter /home/francois/Dev/CppND-Capstone-Shooter/build /home/francois/Dev/CppND-Capstone-Shooter/build /home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/game.dir/depend
 

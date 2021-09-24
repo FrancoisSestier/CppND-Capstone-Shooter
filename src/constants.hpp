@@ -10,7 +10,7 @@ inline constexpr std::size_t _screen_width{820};
 inline constexpr std::size_t _grid_width{64};
 inline constexpr std::size_t _grid_height{64};
 
-inline const std::string asset_folder{"assets"};
+inline const std::string asset_folder{"../assets"};
 inline const std::string texture_folder{asset_folder + "/texture"};
 
 /////////////////////////////

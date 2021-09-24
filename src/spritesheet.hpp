@@ -2,6 +2,7 @@
 #include "texture.hpp"
 #include <cstdint>
 #include <memory>
+#include <SDL.h>
 
 class Spritesheet
 {
@@ -15,13 +16,20 @@ public:
     Spritesheet &operator=(const Spritesheet &other) = delete;
     Spritesheet &operator=(Spritesheet &&other);
 
-    uint32_t FrameCount() const {return framecount_;}
+    SDL_Texture *GetSDLTexture() const;
+
+    uint32_t GetFrameCount() const { return framecount_; }
+    bool AnimationEnded() const;
+    SDL_Rect GetRect() const;
+
+    void Tick();
+
+    void Reset();
 
 private:
+    uint32_t current_sprite_frame_ {0};
+    float tick_count {0};
     uint32_t x_size_ = 1;
     uint32_t framecount_;
-    uint32_t y_size_ ;
-
-    SDL_Rect clip_;
     std::shared_ptr<Texture> texture_;
 };

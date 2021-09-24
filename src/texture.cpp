@@ -5,7 +5,7 @@
 
 Texture::Texture(const char *path)
 {
-    load_texture(path);
+    LoadTexture(path);
 }
 
 Texture::~Texture()
@@ -16,29 +16,60 @@ Texture::~Texture()
     }
 }
 
-    Texture::Texture(Texture&& other) : texture_(other.texture_) {
+Texture::Texture(Texture &&other) : texture_(other.texture_)
+{
+    other.texture_ = nullptr;
+}
+
+Texture::Texture(const std::string& path) 
+{
+    LoadTexture(path.c_str());
+}
+
+Texture &Texture::operator=(Texture &&other)
+{
+    if (texture_ != other.texture_)
+    {
+        texture_ = other.texture_;
         other.texture_ = nullptr;
     }
+    return *this;
+}
 
-    Texture& Texture::operator=(Texture&& other) {
-        if(texture_ != other.texture_) {
-            texture_ = other.texture_;
-            other.texture_ = nullptr;
-        }
-        return *this;
-    }
-
-
-void Texture::load_texture(const char *path)
+void Texture::LoadTexture(const char *path)
 {
 
-    texture_ = IMG_LoadTexture(Renderer::GetInstance()->GetHandle(), path);
-    if (texture_ == nullptr)
+    //Load image at specified path
+    SDL_Surface *surface = IMG_Load(path);
+    if (surface == NULL)
     {
-        printf("Unable to create texture from %s! SDL Error: %s\n", path, SDL_GetError());
+        printf("Unable to load image %s! SDL_image Error: %s\n", path, IMG_GetError());
+    }
+    else
+    {
+        //Create texture from surface pixels
+        texture_ = SDL_CreateTextureFromSurface(Renderer::GetInstance()->GetHandle(), surface);
+        if (texture_ == NULL)
+        {
+            printf("Unable to create texture from %s! SDL Error: %s\n", path, SDL_GetError());
+        }
+        height_ = surface->h;
+        width_ = surface->w;
+        //Get rid of old loaded surface
+        SDL_FreeSurface(surface);
     }
 }
 
 SDL_Texture *Texture::operator->() { return texture_; }
+
+uint32_t Texture::GetWidth() const
+{
+    return width_;
+}
+
+uint32_t Texture::GetHeight() const
+{
+    return height_;
+}
 
 SDL_Texture &Texture::operator*() { return *texture_; }
