@@ -9,7 +9,7 @@ void EventDispatcher::Dispatch() const
   SDL_Event e;
   while (SDL_PollEvent(&e))
   {
-    
+
     if (e.type == SDL_QUIT)
     {
       if (quit_callback_)
@@ -24,34 +24,37 @@ void EventDispatcher::Dispatch() const
       switch (e.key.keysym.sym)
       {
       case SDLK_UP:
-        DispatchKeyEvent(KeyEvent{Key::Up,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Up, key_state});
         break;
       case SDLK_DOWN:
-        DispatchKeyEvent(KeyEvent{Key::Down,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Down, key_state});
         break;
       case SDLK_LEFT:
-        DispatchKeyEvent(KeyEvent{Key::Left,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Left, key_state});
         break;
       case SDLK_RIGHT:
-        DispatchKeyEvent(KeyEvent{Key::Right,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Right, key_state});
+        break;
+      case SDLK_r:
+        DispatchKeyEvent(KeyEvent{Key::R, key_state});
         break;
       case SDLK_w:
-        DispatchKeyEvent(KeyEvent{Key::Up,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Up, key_state});
         break;
       case SDLK_a:
-        DispatchKeyEvent(KeyEvent{Key::Left,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Left, key_state});
         break;
       case SDLK_s:
-        DispatchKeyEvent(KeyEvent{Key::Down,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Down, key_state});
         break;
       case SDLK_d:
-        DispatchKeyEvent(KeyEvent{Key::Right,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Right, key_state});
         break;
-      case SDLK_e:
-        DispatchKeyEvent(KeyEvent{Key::Shoot,key_state});
+      case SDLK_SPACE:
+        DispatchKeyEvent(KeyEvent{Key::Space, key_state});
         break;
       case SDLK_LSHIFT:
-        DispatchKeyEvent(KeyEvent{Key::Dash,key_state});
+        DispatchKeyEvent(KeyEvent{Key::Dash, key_state});
         break;
       }
     }

@@ -19,8 +19,12 @@ public:
     SDL_Texture *GetSDLTexture() const;
 
     uint32_t GetFrameCount() const { return framecount_; }
+    uint32_t GetTickCount() const { return tick_count; }
+
     bool AnimationEnded() const;
     SDL_Rect GetRect() const;
+
+    uint32_t GetCurrentFrame() const;
 
     void Tick();
 

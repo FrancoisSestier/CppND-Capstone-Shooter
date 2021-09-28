@@ -17,20 +17,27 @@ SDL_Rect Spritesheet::GetRect() const
     return clip;
 }
 
+uint32_t Spritesheet::GetCurrentFrame() const
+{
+    return current_sprite_frame_;
+}
+
 void Spritesheet::Tick() 
 {
     tick_count++;
-    current_sprite_frame_ = static_cast<int>(trunc(tick_count/60)) % framecount_;
+    //std::cout<< current_sprite_frame_ <<std::endl;
+    current_sprite_frame_ = static_cast<int>(trunc(tick_count/7)) % framecount_;
 }
 
 void Spritesheet::Reset() 
 {
+
     current_sprite_frame_ = 0;
     tick_count = 0;
 }
 
 bool Spritesheet::AnimationEnded() const{
-    return current_sprite_frame_ >= framecount_-1;
+    return static_cast<int>(trunc(tick_count/7)) == framecount_;
 }
 
 

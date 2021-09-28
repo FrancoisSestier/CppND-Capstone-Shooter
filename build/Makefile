@@ -123,6 +123,87 @@ game/fast:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/bot.o: src/bot.cpp.o
+
+.PHONY : src/bot.o
+
+# target to build an object file
+src/bot.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bot.cpp.o
+.PHONY : src/bot.cpp.o
+
+src/bot.i: src/bot.cpp.i
+
+.PHONY : src/bot.i
+
+# target to preprocess a source file
+src/bot.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bot.cpp.i
+.PHONY : src/bot.cpp.i
+
+src/bot.s: src/bot.cpp.s
+
+.PHONY : src/bot.s
+
+# target to generate assembly for a file
+src/bot.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bot.cpp.s
+.PHONY : src/bot.cpp.s
+
+src/bullet.o: src/bullet.cpp.o
+
+.PHONY : src/bullet.o
+
+# target to build an object file
+src/bullet.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bullet.cpp.o
+.PHONY : src/bullet.cpp.o
+
+src/bullet.i: src/bullet.cpp.i
+
+.PHONY : src/bullet.i
+
+# target to preprocess a source file
+src/bullet.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bullet.cpp.i
+.PHONY : src/bullet.cpp.i
+
+src/bullet.s: src/bullet.cpp.s
+
+.PHONY : src/bullet.s
+
+# target to generate assembly for a file
+src/bullet.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/bullet.cpp.s
+.PHONY : src/bullet.cpp.s
+
+src/camera.o: src/camera.cpp.o
+
+.PHONY : src/camera.o
+
+# target to build an object file
+src/camera.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.o
+.PHONY : src/camera.cpp.o
+
+src/camera.i: src/camera.cpp.i
+
+.PHONY : src/camera.i
+
+# target to preprocess a source file
+src/camera.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.i
+.PHONY : src/camera.cpp.i
+
+src/camera.s: src/camera.cpp.s
+
+.PHONY : src/camera.s
+
+# target to generate assembly for a file
+src/camera.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/camera.cpp.s
+.PHONY : src/camera.cpp.s
+
 src/event_dispatcher.o: src/event_dispatcher.cpp.o
 
 .PHONY : src/event_dispatcher.o
@@ -149,6 +230,33 @@ src/event_dispatcher.s: src/event_dispatcher.cpp.s
 src/event_dispatcher.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/event_dispatcher.cpp.s
 .PHONY : src/event_dispatcher.cpp.s
+
+src/font.o: src/font.cpp.o
+
+.PHONY : src/font.o
+
+# target to build an object file
+src/font.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/font.cpp.o
+.PHONY : src/font.cpp.o
+
+src/font.i: src/font.cpp.i
+
+.PHONY : src/font.i
+
+# target to preprocess a source file
+src/font.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/font.cpp.i
+.PHONY : src/font.cpp.i
+
+src/font.s: src/font.cpp.s
+
+.PHONY : src/font.s
+
+# target to generate assembly for a file
+src/font.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/font.cpp.s
+.PHONY : src/font.cpp.s
 
 src/game.o: src/game.cpp.o
 
@@ -230,6 +338,60 @@ src/player.s: src/player.cpp.s
 src/player.cpp.s:
 	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/player.cpp.s
 .PHONY : src/player.cpp.s
+
+src/prop.o: src/prop.cpp.o
+
+.PHONY : src/prop.o
+
+# target to build an object file
+src/prop.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop.cpp.o
+.PHONY : src/prop.cpp.o
+
+src/prop.i: src/prop.cpp.i
+
+.PHONY : src/prop.i
+
+# target to preprocess a source file
+src/prop.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop.cpp.i
+.PHONY : src/prop.cpp.i
+
+src/prop.s: src/prop.cpp.s
+
+.PHONY : src/prop.s
+
+# target to generate assembly for a file
+src/prop.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop.cpp.s
+.PHONY : src/prop.cpp.s
+
+src/prop_generator.o: src/prop_generator.cpp.o
+
+.PHONY : src/prop_generator.o
+
+# target to build an object file
+src/prop_generator.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop_generator.cpp.o
+.PHONY : src/prop_generator.cpp.o
+
+src/prop_generator.i: src/prop_generator.cpp.i
+
+.PHONY : src/prop_generator.i
+
+# target to preprocess a source file
+src/prop_generator.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop_generator.cpp.i
+.PHONY : src/prop_generator.cpp.i
+
+src/prop_generator.s: src/prop_generator.cpp.s
+
+.PHONY : src/prop_generator.s
+
+# target to generate assembly for a file
+src/prop_generator.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop_generator.cpp.s
+.PHONY : src/prop_generator.cpp.s
 
 src/renderer.o: src/renderer.cpp.o
 
@@ -321,9 +483,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... game"
+	@echo "... src/bot.o"
+	@echo "... src/bot.i"
+	@echo "... src/bot.s"
+	@echo "... src/bullet.o"
+	@echo "... src/bullet.i"
+	@echo "... src/bullet.s"
+	@echo "... src/camera.o"
+	@echo "... src/camera.i"
+	@echo "... src/camera.s"
 	@echo "... src/event_dispatcher.o"
 	@echo "... src/event_dispatcher.i"
 	@echo "... src/event_dispatcher.s"
+	@echo "... src/font.o"
+	@echo "... src/font.i"
+	@echo "... src/font.s"
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"
@@ -333,6 +507,12 @@ help:
 	@echo "... src/player.o"
 	@echo "... src/player.i"
 	@echo "... src/player.s"
+	@echo "... src/prop.o"
+	@echo "... src/prop.i"
+	@echo "... src/prop.s"
+	@echo "... src/prop_generator.o"
+	@echo "... src/prop_generator.i"
+	@echo "... src/prop_generator.s"
 	@echo "... src/renderer.o"
 	@echo "... src/renderer.i"
 	@echo "... src/renderer.s"

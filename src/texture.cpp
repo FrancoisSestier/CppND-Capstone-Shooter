@@ -21,9 +21,14 @@ Texture::Texture(Texture &&other) : texture_(other.texture_)
     other.texture_ = nullptr;
 }
 
-Texture::Texture(const std::string& path) 
+Texture::Texture(const std::string &path, bool is_flat) : is_flat_{is_flat}
 {
     LoadTexture(path.c_str());
+}
+
+Texture::Texture(SDL_Surface *surface)
+{
+    texture_ = SDL_CreateTextureFromSurface(Renderer::GetInstance()->GetHandle(), surface);
 }
 
 Texture &Texture::operator=(Texture &&other)
@@ -62,6 +67,11 @@ void Texture::LoadTexture(const char *path)
 
 SDL_Texture *Texture::operator->() { return texture_; }
 
+SDL_Texture* Texture::GetHandle() 
+{
+    return texture_;
+}
+
 uint32_t Texture::GetWidth() const
 {
     return width_;
@@ -73,3 +83,18 @@ uint32_t Texture::GetHeight() const
 }
 
 SDL_Texture &Texture::operator*() { return *texture_; }
+
+SDL_Rect Texture::GetRect() const
+{
+    SDL_Rect rect;
+    rect.x = 0;
+    rect.y = 0;
+    rect.w = width_;
+    rect.h = height_;
+    return rect;
+}
+
+bool Texture::IsFlat() const
+{
+    return is_flat_;
+}
