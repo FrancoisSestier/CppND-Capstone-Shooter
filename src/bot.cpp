@@ -122,7 +122,7 @@ void Bot::Move()
 
 void Bot::ShootTarget()
 {
-    vec2 bullet_pos = vec2{(speed_.x >= 0) ? pos_.x + width_ + 10 : pos_.x - 40, pos_.y + height_ / 2};
+    vec2 bullet_pos = vec2{(speed_.x >= 0) ? pos_.x + width_ - 30 : pos_.x+10, pos_.y + height_ / 2-10};
     vec2 bullet_speed = vec2_helper::normalize(target_->GetTarget().pos - pos_) * shooting_force_;
     instanciate_bullet_(bullet_pos, bullet_speed);
 }

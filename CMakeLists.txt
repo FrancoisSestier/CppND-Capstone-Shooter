@@ -23,7 +23,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 include_directories(${SDL2_INCLUDE_DIRS} src)
 
-add_executable(game src/main.cpp src/event_dispatcher.cpp src/player.cpp src/game.cpp src/renderer.cpp src/texture.cpp src/spritesheet.cpp src/bot.cpp src/camera.cpp src/prop.cpp src/font.cpp src/prop_generator.cpp src/bullet.cpp)
+add_executable(game src/main.cpp src/event_dispatcher.cpp src/player.cpp src/game.cpp src/renderer.cpp src/texture.cpp src/spritesheet.cpp src/bot.cpp src/camera.cpp src/prop.cpp src/font.cpp src/prop_generator.cpp src/bullet.cpp src/thread_pool.cpp)
 string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
 
 target_link_libraries(game ${SDL2_LIBRARIES})

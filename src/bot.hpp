@@ -52,7 +52,7 @@ private:
     bullet_callback instanciate_bullet_;
     float width_{128};
     float height_{128};
-    float max_speed{4};
+    float max_speed{4.8};
     float max_shooting_range_{500};
-    float shooting_force_{2.f};
+    float shooting_force_{2.5f};
 };

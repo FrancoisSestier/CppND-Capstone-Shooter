@@ -52,6 +52,14 @@ void Game::Run()
       SDL_Delay(_target_frame_duration - time_.GetDeltaTime());
     }
   }
+  if (extend_right_.valid())
+  {
+    extend_right_.wait();
+  }
+  if (extend_left_.valid())
+  {
+    extend_left_.wait();
+  }
 }
 
 void Game::Restart()
@@ -202,14 +210,21 @@ void Game::Draw()
 
 void Game::AutoWorldGen()
 {
-
   if (camera_.GetPos().x < left_world_gen_extent)
   {
-    std::async(&Game::GenWorld, this, floor(camera_.GetPos().x / _screen_width) * (_screen_width), _screen_width);
+    if (extend_left_.valid())
+    {
+      extend_left_.wait();
+    }
+    auto extend_left_ = thread_pool_.push(&Game::GenWorld, this, floor(camera_.GetPos().x / _screen_width) * (_screen_width), (float)_screen_width);
   }
   if (camera_.GetPos().x + _screen_width > right_world_gen_extent)
   {
-    std::async(&Game::GenWorld, this, floor((camera_.GetPos().x + _screen_width) / _screen_width) * (_screen_width), _screen_width);
+    if (extend_right_.valid())
+    {
+      extend_right_.wait();
+    }
+    auto extend_right_ = thread_pool_.push(&Game::GenWorld, this, floor((camera_.GetPos().x + _screen_width) / _screen_width) * (_screen_width), (float)_screen_width);
   }
 }
 

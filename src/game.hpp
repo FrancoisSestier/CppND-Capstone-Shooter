@@ -14,6 +14,8 @@
 #include <mutex>
 #include <spawner.hpp>
 #include <resources.hpp>
+#include <future>
+#include <thread_pool.hpp>
 
 class Game
 {
@@ -36,6 +38,7 @@ private:
   void AutoSpwanBots();
   
   Renderer *renderer_;
+  ThreadPool thread_pool_;
 
   EventDispatcher event_dispatcher_;
 
@@ -47,6 +50,9 @@ private:
   std::vector<Prop> background_props_;
   std::vector<Bot> bots_;
   std::vector<std::unique_ptr<Bullet>> bullets_;
+  std::future<void> extend_left_;
+  std::future<void> extend_right_;
+  
 
   Time time_;
 
