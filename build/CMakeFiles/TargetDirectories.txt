@@ -1,3 +1,0 @@
-/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles/rebuild_cache.dir
-/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles/edit_cache.dir
-/home/francois/Dev/CppND-Capstone-Shooter/build/CMakeFiles/game.dir
